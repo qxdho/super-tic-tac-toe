@@ -1,5 +1,6 @@
 additionalProperties:
     formFields:
+        # 端口配置
         - default: 3000
           edit: true
           envKey: PANEL_APP_PORT_HTTP
@@ -9,6 +10,7 @@ additionalProperties:
           rule: paramPort
           type: number
 
+        # 部署密码
         - default: "supersecret"
           envKey: DEPLOY_PASSWORD
           labelEn: Deploy Password
@@ -18,17 +20,18 @@ additionalProperties:
           rule: paramComplexity
           type: password
 
+        # 玩家数量限制（关键修正部分）
         - default: 4
           envKey: PLAYER_LIMIT
           labelEn: Max Players
           labelZh: 最大玩家数
           required: true
           rule: paramCommon
-          type: number
+          type: select
           values:
-              - label: 2
+              - label: "2人"   # 这里必须用字符串类型
                 value: 2
-              - label: 3
+              - label: "3人"
                 value: 3
-              - label: 4
+              - label: "4人"
                 value: 4
