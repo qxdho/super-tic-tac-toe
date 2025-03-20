@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>部署控制台</title>
+  <link rel="stylesheet" href="/css/deploy.css">
+</head>
+<body>
+  <div class="deploy-console">
+    <h1>自动化部署系统</h1>
+    
+    <!-- 认证区域 -->
+    <div class="auth-section">
+      <input type="password" id="deploy-password" placeholder="请输入部署密码">
+      <button onclick="authenticate()">认证</button>
+    </div>
+
+    <!-- 控制区域 -->
+    <div class="controls" style="display:none">
+      <div class="status-panel">
+        <h3>服务状态: <span id="service-status">检查中...</span></h3>
+        <button onclick="checkStatus()">刷新状态</button>
+      </div>
+
+      <div class="action-buttons">
+        <button onclick="deploy()">🚀 一键部署</button>
+        <button onclick="restartService()">🔄 重启服务</button>
+        <button onclick="stopService()">🛑 停止服务</button>
+      </div>
+
+      <div class="log-container">
+        <h3>实时日志</h3>
+        <pre id="deploy-log"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/deploy.js"></script>
+</body>
+</html>

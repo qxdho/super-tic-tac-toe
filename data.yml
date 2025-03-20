@@ -1,0 +1,32 @@
+# 配置表单定义
+form:
+  - name: "基础配置"
+    items:
+      - name: DOMAIN
+        label: "访问域名"
+        type: text
+        default: "ttt.example.com"
+        required: true
+
+      - name: DEPLOY_PASSWORD
+        label: "部署密码"
+        type: password
+        default: "supersecret"
+        required: true
+
+      - name: PLAYER_LIMIT
+        label: "最大玩家数"
+        type: number
+        default: 4
+        min: 2
+        max: 6
+
+# 安装脚本
+install_script: |
+  #!/bin/bash
+  docker-compose up -d
+
+# 卸载脚本
+uninstall_script: |
+  #!/bin/bash
+  docker-compose down

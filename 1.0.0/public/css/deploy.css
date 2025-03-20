@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #2c3e50;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .deploy-console {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+  
+  .auth-section {
+    margin-bottom: 30px;
+  }
+  
+  #deploy-password {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #2980b9;
+  }
+  
+  .action-buttons {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .log-container {
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    height: 300px;
+    overflow-y: auto;
+  }
+  
+  #deploy-log {
+    color: #e6e6e6;
+    white-space: pre-wrap;
+  }
+  
+  .status-panel {
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  /* 滚动条样式 */
+  .log-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .log-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+  }
+  
+  .log-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }

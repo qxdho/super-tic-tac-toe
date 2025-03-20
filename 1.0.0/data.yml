@@ -1,0 +1,34 @@
+additionalProperties:
+    formFields:
+        - default: 3000
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Access Port
+          labelZh: 访问端口
+          required: true
+          rule: paramPort
+          type: number
+
+        - default: "supersecret"
+          envKey: DEPLOY_PASSWORD
+          labelEn: Deploy Password
+          labelZh: 部署密码
+          random: true
+          required: true
+          rule: paramComplexity
+          type: password
+
+        - default: 4
+          envKey: PLAYER_LIMIT
+          labelEn: Max Players
+          labelZh: 最大玩家数
+          required: true
+          rule: paramCommon
+          type: number
+          values:
+              - label: 2
+                value: 2
+              - label: 3
+                value: 3
+              - label: 4
+                value: 4
