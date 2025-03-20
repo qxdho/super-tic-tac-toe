@@ -20,8 +20,8 @@ additionalProperties:
           type: select
           values:
               - label: "2人"
-                value: "2"  # 必须用字符串类型
+                value: 2
               - label: "3人"
-                value: "3"
+                value: 3
               - label: "4人"
-                value: "4"
+                value: 4
