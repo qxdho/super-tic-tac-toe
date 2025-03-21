@@ -39,11 +39,11 @@ npm start
 install_dir=$(grep '^BASE_DIR=' /usr/bin/1pctl | cut -d'=' -f2)
 
 # 删除旧版本
-rm -rf $install_dir/1panel/resource/apps/local/super-ttt
+rm -rf $install_dir/1panel/resource/apps/local/super-tic-tac-toe
 
 # 克隆你的仓库
 git clone https://github.com/qxdho/super-tic-tac-toe.git \
-  $install_dir/1panel/resource/apps/local/super-ttt
+  $install_dir/1panel/resource/apps/local/super-tic-tac-toe
 
 # 检查是否成功
 if [ $? -eq 0 ]; then

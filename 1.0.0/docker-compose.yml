@@ -1,10 +1,10 @@
 version: '3.8'
 services:
-  super-tictactoe:
+  super-tic-tac-toe:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: super-tictactoe
+    container_name: super-tic-tac-toe
     ports:
       - ${PANEL_APP_PORT_HTTP}:3000
     restart: always

@@ -1,5 +1,5 @@
 additionalProperties:
-  key: super-tictactoe
+  key: super-tic-tac-toe
   name: 超级井字棋
   tags:
     - WebSite
