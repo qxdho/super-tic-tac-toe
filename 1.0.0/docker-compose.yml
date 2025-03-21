@@ -1,18 +1,19 @@
-# 删除 version 字段（兼容 Docker Compose V2）
 services:
-  super-tictactoe:
-    # 显式指定镜像名，避免 Docker 默认生成随机名称
-    image: super-tictactoe:1.0.0
+  super-tic-tac-toe:
+    # 直接定义构建逻辑（无需预先手动构建）
     build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: super-tictactoe
+      context: .          # 构建上下文目录（当前目录）
+      dockerfile: Dockerfile  # Dockerfile 路径
+    image: super-tic-tac-toe:1.0.0  # 可选：指定构建后的镜像名
+    container_name: super-tic-tac-toe
     ports:
       - "${PANEL_APP_PORT_HTTP}:3000"
     restart: always
     networks:
       - 1panel-network
+    # 禁止拉取远程镜像，强制使用本地构建
+    pull_policy: never
 
 networks:
   1panel-network:
-    external: true  # 确保该网络已存在（由 1Panel 创建）
+    external: true
