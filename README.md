@@ -35,30 +35,25 @@ npm start
 ```bash
 #!/bin/sh
 
-# 获取1Panel安装目录（确保获取到正确路径）
+# 获取1Panel安装路径
 install_dir=$(grep '^BASE_DIR=' /usr/bin/1pctl | cut -d'=' -f2 | sed 's/\/$//')
 
-# 定义应用名称和版本
-APP_NAME="super-tic-tac-toe"
+# 定义应用参数
+APP_NAME="super-tictactoe"
 VERSION="1.0.0"
 
-# 删除旧版本（注意路径中的 resource 目录）
-rm -rf $install_dir/1panel/resource/apps/local/$APP_NAME
+# 删除旧版本并创建目录
+rm -rf "$install_dir/1panel/resource/apps/local/$APP_NAME"
+mkdir -p "$install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION"
 
-# 创建版本目录
-mkdir -p $install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION
-
-# 克隆仓库到正确路径（注意结尾的 . 表示当前目录内容）
+# 克隆仓库到目标位置
 git clone https://github.com/qxdho/super-tic-tac-toe.git \
-  $install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION/.
+  "$install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION"
 
-# 检查关键文件是否存在
-if [ -f "$install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION/docker-compose.yml" ]; then
-  echo "部署成功！请刷新1Panel应用商店"
-else
-  echo "部署失败，请检查路径和文件结构"
-  exit 1
-fi
+# 验证部署
+[ -f "$install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION/docker-compose.yml" ] && \
+  echo "部署成功！请刷新1Panel应用商店" || \
+  echo "部署失败：核心文件缺失"
 ```
 
 #### **方法 2：手动部署**
