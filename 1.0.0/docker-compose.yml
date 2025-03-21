@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  super-tictactoe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: super-tictactoe
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:3000
+    restart: always
+    networks:
+      - 1panel-network
+networks:
+  1panel-network:
+    external: true

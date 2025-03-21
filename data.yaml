@@ -1,0 +1,14 @@
+additionalProperties:
+  key: super-tictactoe
+  name: 超级井字棋
+  tags:
+    - WebSite
+    - Game
+  shortDescZh: 9宫格嵌套的实时对战井字棋游戏
+  shortDescEn: Real-time 9-grid nested Tic-Tac-Toe game
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/qxdho/super-tic-tac-toe
+  github: https://github.com/qxdho/super-tic-tac-toe
+  document: https://github.com/qxdho/super-tic-tac-toe/wiki

@@ -1,11 +1,18 @@
-super-tictactoe/
-├── app.yaml
-├── docker-compose.yml
-├── Dockerfile
-├── public/
-│   ├── index.html
-│   ├── style.css
-│   └── app.js
-└── server/
-    ├── server.js
-    └── game.js
+super-tictactoe/  # 应用根目录（key）
+├── logo.png      # 180x180 图标
+├── data.yml      # 应用声明文件
+└── 1.0.0/        # 版本目录（必须与 data.yml 中的 version 匹配）
+    ├── data.yml        # 安装配置表单
+    ├── docker-compose.yml
+    ├── Dockerfile
+    ├── scripts/
+    │   ├── init.sh     # 安装前脚本（可选）
+    │   ├── upgrade.sh  # 升级脚本（可选）
+    │   └── uninstall.sh # 卸载脚本（可选）
+    ├── public/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── app.js
+    └── server/
+        ├── server.js
+        └── game.js
