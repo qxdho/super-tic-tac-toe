@@ -35,25 +35,29 @@ npm start
 ```bash
 #!/bin/sh
 
-# 获取1Panel安装路径
+# 自动获取1Panel安装路径
 install_dir=$(grep '^BASE_DIR=' /usr/bin/1pctl | cut -d'=' -f2 | sed 's/\/$//')
 
-# 定义应用参数
+# 应用名称（与仓库名一致）
 APP_NAME="super-tictactoe"
-VERSION="1.0.0"
 
-# 删除旧版本并创建目录
+# 强制删除旧版本（如果存在）
 rm -rf "$install_dir/1panel/resource/apps/local/$APP_NAME"
-mkdir -p "$install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION"
 
-# 克隆仓库到目标位置
+# 克隆仓库到正确位置（直接使用仓库中的版本目录）
 git clone https://github.com/qxdho/super-tic-tac-toe.git \
-  "$install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION"
+  "$install_dir/1panel/resource/apps/local/$APP_NAME"
 
-# 验证部署
-[ -f "$install_dir/1panel/resource/apps/local/$APP_NAME/$VERSION/docker-compose.yml" ] && \
-  echo "部署成功！请刷新1Panel应用商店" || \
-  echo "部署失败：核心文件缺失"
+# 验证关键路径
+if [ -f "$install_dir/1panel/resource/apps/local/$APP_NAME/1.0.0/docker-compose.yml" ]; then
+    echo "部署成功！请执行："
+    echo "1. 进入1Panel控制台"
+    echo "2. 刷新应用商店"
+    echo "3. 安装 '超级井字棋 1.0.0'"
+else
+    echo "部署失败：请检查仓库是否包含 1.0.0/docker-compose.yml"
+    exit 1
+fi
 ```
 
 #### **方法 2：手动部署**
