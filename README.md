@@ -88,7 +88,7 @@ fi
 ---
 
 ## **许可证**
-MIT License © 2023 [qxdho](https://github.com/qxdho)
+MIT License © 2025 [qxdho](https://github.com/qxdho)
 
 ---
 
