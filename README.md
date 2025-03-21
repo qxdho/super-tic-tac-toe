@@ -1,9 +1,6 @@
 # Super Tic-Tac-Toe  
 [![GitHub license](https://img.shields.io/github/license/qxdho/super-tic-tac-toe)](https://github.com/qxdho/super-tic-tac-toe/blob/main/LICENSE)  
 基于 WebSocket 的实时多人超级井字棋游戏，支持 1Panel 一键部署  
-
-![游戏界面](https://raw.githubusercontent.com/qxdho/super-tic-tac-toe/main/public/screenshot.png)
-
 ---
 
 ## **功能特性**
