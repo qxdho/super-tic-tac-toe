@@ -1,7 +1,8 @@
 # 删除 version 字段（兼容 Docker Compose V2）
 services:
   super-tictactoe:
-    # 直接使用 build 构建，不再指定 image 字段（避免拉取远程镜像）
+    # 显式指定镜像名，避免 Docker 默认生成随机名称
+    image: super-tictactoe:1.0.0
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,4 +15,4 @@ services:
 
 networks:
   1panel-network:
-    external: true
+    external: true  # 确保该网络已存在（由 1Panel 创建）
